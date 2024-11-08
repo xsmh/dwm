@@ -3,7 +3,7 @@
 /* Constants */
 #define TERMINAL "st"
 #define TERMCLASS "St"
-#define BROWSER "librewolf"
+#define BROWSER "google-chrome-stable"
 
 /* appearance */
 static unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -168,7 +168,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_e,          spawn,                  SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook 2>/dev/null") },
 	{ MODKEY|ShiftMask,		XK_e,          spawn,                  SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
 	{ MODKEY,			XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
-	{ MODKEY|ShiftMask,		XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
+	{ MODKEY|ShiftMask,		XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "btm", NULL } } },
 	{ MODKEY,			XK_t,          setlayout,              {.v = &layouts[0]} }, /* tile */
 	{ MODKEY|ShiftMask,		XK_t,          setlayout,              {.v = &layouts[1]} }, /* bstack */
 	{ MODKEY,			XK_y,          setlayout,              {.v = &layouts[2]} }, /* spiral */
@@ -278,7 +278,7 @@ static const Key keys[] = {
 	{ 0, XF86XK_WWW,                               spawn,                  {.v = (const char*[]){ BROWSER, NULL } } },
 	{ 0, XF86XK_DOS,                               spawn,                  {.v = termcmd } },
 	{ 0, XF86XK_ScreenSaver,                       spawn,                  SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
-	{ 0, XF86XK_TaskPane,                          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
+	{ 0, XF86XK_TaskPane,                          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "btm", NULL } } },
 	{ 0, XF86XK_Mail,                              spawn,                  SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
 	{ 0, XF86XK_MyComputer,                        spawn,                  {.v = (const char*[]){ TERMINAL, "-e",  "lfub",  "/", NULL } } },
 	/* { 0, XF86XK_Battery,                        spawn,                  SHCMD("") }, */
@@ -288,6 +288,9 @@ static const Key keys[] = {
 	{ 0, XF86XK_TouchpadOn,                        spawn,                  {.v = (const char*[]){ "synclient", "TouchpadOff=0", NULL } } },
 	{ 0, XF86XK_MonBrightnessUp,                   spawn,                  {.v = (const char*[]){ "xbacklight", "-inc", "15", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,                 spawn,                  {.v = (const char*[]){ "xbacklight", "-dec", "15", NULL } } },
+	/* If you are using the thinkpad t480s laptop and brightness controls do not work, comment out the two lines above and uncomment the two below and install "light" package */
+	/* { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("sudo light -A 2") }, */ 
+	/* { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("sudo light -U 2") }, */
 
 	/* { MODKEY|Mod4Mask,           XK_h,          incrgaps,               {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,           XK_l,          incrgaps,               {.i = -1 } }, */
