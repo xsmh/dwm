@@ -17,7 +17,7 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = {
-  "JetBrainsMono Nerd Font:style=SemiBold:pixelsize=13:antialias=true:autohint=true",
+  "JetBrainsMono Nerd Font:style=Bold:pixelsize=13:antialias=true:autohint=true",
   "monospace:size=10", 
 };
 static char normbgcolor[]           = "#222222";
@@ -315,7 +315,7 @@ static const Key keys[] = {
 	{ ShiftMask,			XK_Page_Up,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -44 $(pidof dwmblocks)") },
 	{ ShiftMask,			XK_Delete,	spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|Mod1Mask,		XK_l,		spawn,		SHCMD("mpc pause; pauseallmpv; wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks); slock; wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
-  	{ MODKEY|ControlMask,		XK_space,	spawn,		SHCMD("cycle-keyboard") },
+  { MODKEY|ControlMask,		XK_space,	spawn,		SHCMD("cycle-keyboard") },
 };
 
 /* button definitions */
