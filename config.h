@@ -217,7 +217,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
 	/* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_c,		spawn,		{.v = (const char*[]){ "maimpick", NULL } } },
-	{ MODKEY|ShiftMask,		XK_c,		spawn,	SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+	{ MODKEY|ShiftMask,		XK_c,		spawn,	SHCMD("maim -q -d 0.2 pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+	{ MODKEY|ControlMask,		XK_c,		spawn,	SHCMD("maim -q -d 0.2 | xclip -sel clip -t image/png") },
   { MODKEY|Mod1Mask, XK_c, spawn, {.v = (const char*[]){ "dmenurecord", NULL } } },
   { MODKEY|Mod1Mask|ShiftMask, XK_c, spawn,  {.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
 	/* V is automatically bound above in STACKKEYS */
