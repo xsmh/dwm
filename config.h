@@ -194,7 +194,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
-	/* { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") }, */
+	{ MODKEY|ShiftMask,		XK_s,		togglebar,		{0} },
 	{ MODKEY,			XK_d,		spawn,          {.v = (const char*[]){ "dmenu_run", NULL } } },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		{.v = (const char*[]){ "passmenu", NULL } } },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
@@ -222,8 +222,8 @@ static const Key keys[] = {
   { MODKEY|Mod1Mask, XK_c, spawn, {.v = (const char*[]){ "dmenurecord", NULL } } },
   { MODKEY|Mod1Mask|ShiftMask, XK_c, spawn,  {.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
 	/* V is automatically bound above in STACKKEYS */
-	{ MODKEY,			XK_b,		togglebar,	{0} },
-	/* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
+	{ MODKEY,			XK_b,		spawn,		SHCMD("xdotool type --delay 0 $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
+	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ "bookmarkthis", NULL } } },
 	{ MODKEY,			XK_n,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", "-c", "VimwikiIndex", NULL } } },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat ; pkill -RTMIN+6 dwmblocks") },
 	{ MODKEY,			XK_m,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
@@ -242,7 +242,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } },
 	{ MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } },
 	{ MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
-	{ MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
+	{ MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type --delay 0 $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
 
 	{ MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
 	{ MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
