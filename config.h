@@ -217,10 +217,10 @@ static const Key keys[] = {
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
 	/* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_c,		spawn,		{.v = (const char*[]){ "maimpick", NULL } } },
-	{ MODKEY|ShiftMask,		XK_c,		spawn,	SHCMD("maim -q -d 0.2 pic-full-$(date '+%y%m%d-%H%M-%S').png") },
-	{ MODKEY|ControlMask,		XK_c,		spawn,	SHCMD("maim -q -d 0.2 | xclip -sel clip -t image/png") },
-  { MODKEY|Mod1Mask, XK_c, spawn, {.v = (const char*[]){ "dmenurecord", NULL } } },
-  { MODKEY|Mod1Mask|ShiftMask, XK_c, spawn,  {.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
+	{ MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("maim -q -d 0.2 pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+	{ MODKEY|ControlMask,		XK_c,		spawn,		SHCMD("maim -q -d 0.2 | xclip -sel clip -t image/png") },
+  	{ MODKEY|Mod1Mask, XK_c, spawn, {.v = (const char*[]){ "dmenurecord", NULL } } },
+  	{ MODKEY|Mod1Mask|ShiftMask, XK_c, spawn,  {.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
 	/* V is automatically bound above in STACKKEYS */
 	{ MODKEY,			XK_b,		spawn,		SHCMD("xdotool type --delay 0 $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		{.v = (const char*[]){ "bookmarkthis", NULL } } },
@@ -292,7 +292,7 @@ static const Key keys[] = {
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOff,	spawn,		{.v = (const char*[]){ "synclient", "TouchpadOff=1", NULL } } },
 	{ 0, XF86XK_TouchpadOn,		spawn,		{.v = (const char*[]){ "synclient", "TouchpadOff=0", NULL } } },
-  /* If brightness keys below are not working on the Thinkpad t480s, install this package: xf86-video-intel */
+  	/* If brightness keys below are not working on the Thinkpad t480s, install this package: xf86-video-intel */
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "xbacklight", "-inc", "15", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "xbacklight", "-dec", "15", NULL } } },
 
@@ -318,7 +318,7 @@ static const Key keys[] = {
 	{ ShiftMask,			XK_Page_Up,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -44 $(pidof dwmblocks)") },
 	{ ShiftMask,			XK_End,	spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|Mod1Mask,		XK_l,		spawn,		SHCMD("mpc pause; pauseallmpv; wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks); slock; wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
-  { MODKEY|ControlMask,		XK_space,	spawn,		SHCMD("cycle-keyboard") },
+	{ MODKEY|ControlMask,		XK_space,	spawn,		SHCMD("cycle-keyboard") },
 };
 
 /* button definitions */
